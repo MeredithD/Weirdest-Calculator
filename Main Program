@@ -1,0 +1,116 @@
+//不要把这个玩坏了 ©copyright 2014 積彧成疾
+#include <iostream>
+using namespace std;
+
+double calculate(double v1, double v2, double(*method)(double x, double y))		//pointer to a function
+{
+	return method(v1, v2);
+}
+double add(double x, double y);													//:3333 function list
+double cut(double x, double y);
+double times(double x, double y);
+double divide(double x, double y);
+
+void format();
+
+
+int main()
+{
+	cout << "Input 2 numbers, please....\n";
+	double x, y;
+	cin >> x >> y;
+
+	cout << "\b\b\b\b\bok...please select a function...\n"
+		<< "A.Plus\tB.Minus\tC.Times\tD.Divide\tE.Format your hard-drive(press 'q' to quit序):\n";
+	double sum = 2333333;															//:3 
+	cin >> choice;
+	while (cin)
+	{
+		if (!(choice == 'Q' || choice == 'q'))
+		{
+			switch (choice)
+			{
+			case 'A':
+			case 'a': sum = calculate(x, y, add);
+				break;
+			case 'B':
+			case 'b': sum = calculate(x, y, cut);
+				break;
+			case 'C':
+			case 'c': sum = calculate(x, y, times);
+				break;
+			case 'D':
+			case 'd': sum = calculate(x, y, divide);
+				break;
+			case 'E':
+			case 'e': format();
+				break;
+			default: cout << "WTF u didnt select anything!\n";
+			}
+			cout << "Dahn,Dahn!\n"
+				<< "The result is " << sum << " !!\n";
+			break;
+		}
+		else
+		{
+			cout << "Bye~\n";
+			break;
+		}
+	}
+
+	system("pause");
+	return 0;
+	
+}
+
+double add(double x, double y)
+{
+	return x + y;
+}
+
+double cut(double x, double y)
+{
+	return x - y;
+}
+
+double times(double x, double y)
+{
+	return x * y;
+}
+
+double divide(double x, double y)
+{
+	return x / y;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void format()									//這不是一個函數！
+{
+	cout << "\a\aFormat processing... Please wait\n";
+	cout << "System Progress: (□System File ■Formatted File)";
+	int limit = 500;
+	for (int i = 0; i < limit; i++)
+	{
+		if (i == 16 || i == 35 || i == 39 || i == 45 || i == 71 || i == 235 || i == 239 || i == 298 || i == 400 || i == 411 || i == 460 || i == 499)
+		{
+			cout << "□";
+		}
+		else cout << "■";
+	}
+	cout << "\nDone format. Please reboot your system.\n\n";
+}
+//2333333 这特么太逗了
