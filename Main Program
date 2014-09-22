@@ -11,6 +11,7 @@ double cut(double x, double y);
 double times(double x, double y);
 double divide(double x, double y);
 
+void format();
 
 
 int main()
@@ -20,7 +21,7 @@ int main()
 	cin >> x >> y;
 
 	cout << "\b\b\b\b\b好吧..看下面 然後再選擇一次...\n"
-		<< "A.加\tB.減\tC.乘\tD.除\t(按'q'退出程序):\n";
+		<< "A.加\tB.減\tC.乘\tD.除\tE.格式化硬盤(按'q'退出程序):\n";
 	double sum = 2333333;															//:3 @刺蛇 
 	char choice;
 	cin >> choice;
@@ -41,6 +42,9 @@ int main()
 				break;
 			case 'D':
 			case 'd': sum = calculate(x, y, divide);
+				break;
+			case 'E':
+			case 'e': format();
 				break;
 			default: cout << "你他媽選的什麼東西啊！\n";
 			}
@@ -78,4 +82,35 @@ double times(double x, double y)
 double divide(double x, double y)
 {
 	return x / y;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void format()									//這不是一個函數！
+{
+	cout << "\a\a格式化中...請稍後\n";
+	cout << "系統進度: (□系统文件 ■已格式化内容)";
+	int limit = 500;
+	for (int i = 0; i < limit; i++)
+	{
+		if (i == 16 || i == 35 || i == 39 || i == 45 || i == 71 || i == 235 || i == 239 || i == 298 || i == 400 || i == 411 || i == 460 || i == 499)
+		{
+			cout << "□";
+		}
+		else cout << "■";
+	}
+	cout << "\n格式化完成！請重啟電腦。\n\n";
 }
