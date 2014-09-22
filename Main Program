@@ -16,12 +16,12 @@ void format();
 
 int main()
 {
-	cout << "請輸入兩個數....\n";
+	cout << "Input 2 numbers, please....\n";
 	double x, y;
 	cin >> x >> y;
 
-	cout << "\b\b\b\b\b好吧..看下面 然後再選擇一次...\n"
-		<< "A.加\tB.減\tC.乘\tD.除\tE.格式化硬盤(按'q'退出程序):\n";
+	cout << "\b\b\b\b\bok then... Please select a function...\n"
+		<< "A.Plus\tB.Minus\tC.Times乘\tD.Divide\tE.Format Hard-drive(press 'q' to quit):\n";
 	double sum = 2333333;															//:3 @刺蛇 
 	char choice;
 	cin >> choice;
@@ -46,10 +46,10 @@ int main()
 			case 'E':
 			case 'e': format();
 				break;
-			default: cout << "你他媽選的什麼東西啊！\n";
+			default: cout << "What the ■■■■ you just select?!！\n";
 			}
 			cout << "Dahn,Dahn!\n"
-				<< "計算結果是 " << sum << "!!\n";
+				<< "The result is " << sum << " !!\n";
 			break;
 		}
 		else
@@ -99,10 +99,10 @@ double divide(double x, double y)
 
 
 
-void format()									//這不是一個函數！
+void format()									//This is not a function! >.<
 {
-	cout << "\a\a格式化中...請稍後\n";
-	cout << "系統進度: (□系统文件 ■已格式化内容)";
+	cout << "\a\aFormat processing... Please wait\n";
+	cout << "Progress: (□System file ■formatted file)";
 	int limit = 500;
 	for (int i = 0; i < limit; i++)
 	{
@@ -112,5 +112,6 @@ void format()									//這不是一個函數！
 		}
 		else cout << "■";
 	}
-	cout << "\n格式化完成！請重啟電腦。\n\n";
+	cout << "\nFormat done. Please reboot your system.\n\n";
 }
+//23333333333
