@@ -1,0 +1,81 @@
+//不要把这个玩坏了 ©copyright 2014 積彧成疾
+#include <iostream>
+using namespace std;
+
+double calculate(double v1, double v2, double(*method)(double x, double y))		//pointer to a function
+{
+	return method(v1, v2);
+}
+double add(double x, double y);													//fuck you, prototype 
+double cut(double x, double y);
+double times(double x, double y);
+double divide(double x, double y);
+
+
+
+int main()
+{
+	cout << "請輸入兩個數....\n";
+	double x, y;
+	cin >> x >> y;
+
+	cout << "\b\b\b\b\b好吧..看下面 然後再選擇一次...\n"
+		<< "A.加\tB.減\tC.乘\tD.除\t(按'q'退出程序):\n";
+	double sum = 2333333;															//:3 @刺蛇 
+	char choice;
+	cin >> choice;
+	while (cin)
+	{
+		if (!(choice == 'Q' || choice == 'q'))
+		{
+			switch (choice)
+			{
+			case 'A':
+			case 'a': sum = calculate(x, y, add);
+				break;
+			case 'B':
+			case 'b': sum = calculate(x, y, cut);
+				break;
+			case 'C':
+			case 'c': sum = calculate(x, y, times);
+				break;
+			case 'D':
+			case 'd': sum = calculate(x, y, divide);
+				break;
+			default: cout << "你他媽選的什麼東西啊！\n";
+			}
+			cout << "Dahn,Dahn!\n"
+				<< "計算結果是 " << sum << "!!\n";
+			break;
+		}
+		else
+		{
+			cout << "Bye~\n";
+			break;
+		}
+	}
+
+	system("pause");
+	return 0;
+	
+}
+
+double add(double x, double y)
+{
+	return x + y;
+}
+
+double cut(double x, double y)
+{
+	return x - y;
+}
+
+double times(double x, double y)
+{
+	return x * y;
+}
+
+double divide(double x, double y)
+{
+	return x / y;
+}
